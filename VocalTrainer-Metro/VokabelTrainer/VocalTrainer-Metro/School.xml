@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<School>
+  <ClassRoom uniqueId="aaa" title="MBS 6e" subtitle="Max Brauer Schule Klasse 6-e" imagePath="" description="Vokabeln von der Max Brauer Schule 6 - e">
+  </ClassRoom>
+  <ClassRoom uniqueId="bbb" title="MBS 6f" subtitle="Max Brauer Schule Klasse 6-f" imagePath="" description="Vokabeln von der Max Brauer Schule 6 - f">
+  </ClassRoom>
+</School>
