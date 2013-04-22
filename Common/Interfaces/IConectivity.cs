@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Marx.Wolfgang.VocabTrainer.Common.Interfaces
 {
-    interface IConectivity
+    public interface IConectivity
     {
         /*
          * Get Requests

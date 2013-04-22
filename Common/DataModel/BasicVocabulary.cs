@@ -6,7 +6,7 @@ using System.Xml.Serialization;
 
 namespace Marx.Wolfgang.VocabTrainer.Common.DataModel
 {
-    class BasicVocabulary
+    public class BasicVocabulary
     {
         [XmlElement("id")]
         public int Id { get; set; }
