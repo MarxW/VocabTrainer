@@ -16,6 +16,7 @@ namespace Marx.Wolfgang.VocabTrainer.Common.ViewModel
     {
         public event PropertyChangedEventHandler PropertyChanged;
         public event EventHandler ClassroomsChanged;
+        public event EventHandler LoadingDataError;
 
         #region "Accessors"
 
@@ -41,12 +42,12 @@ namespace Marx.Wolfgang.VocabTrainer.Common.ViewModel
 
         public School()
         {
-            this._classRooms = new List<BasicClassRoom>();
+            this._classRooms = new ObservableCollection<BasicClassRoom>();
         }
 
         public School(IConectivity conectivity)
         {
-            this._classRooms = new List<BasicClassRoom>();
+            this._classRooms = new ObservableCollection<BasicClassRoom>();
             this._conn = conectivity;
         }
 
@@ -90,6 +91,14 @@ namespace Marx.Wolfgang.VocabTrainer.Common.ViewModel
         #endregion
 
         #region "Events"
+
+        private void EnvokeLoadingDataError(EventArgs e)
+        {
+            if (LoadingDataError != null)
+            {
+                LoadingDataError(this, e);
+            }
+        }
 
         private void EnvokeClassroomsChanged(EventArgs e)
         {

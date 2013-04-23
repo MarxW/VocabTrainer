@@ -1,6 +1,6 @@
-﻿using VocabTrainer_Phone.Resources;
+﻿using VocabTrainerPhoneApp.Resources;
 
-namespace VocabTrainer_Phone
+namespace VocabTrainerPhoneApp
 {
     /// <summary>
     /// Provides access to string resources.

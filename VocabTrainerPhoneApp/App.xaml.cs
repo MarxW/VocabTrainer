@@ -6,9 +6,9 @@ using System.Windows.Markup;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
-using VocabTrainer_Phone.Resources;
+using VocabTrainerPhoneApp.Resources;
 
-namespace VocabTrainer_Phone
+namespace VocabTrainerPhoneApp
 {
     public partial class App : Application
     {

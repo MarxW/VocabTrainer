@@ -1,5 +1,0 @@
-﻿<Deployment xmlns="http://schemas.microsoft.com/client/2007/deployment" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" EntryPointAssembly="VocabTrainer_Phone" EntryPointType="VocabTrainer_Phone.App" RuntimeVersion="4.7.50308.0">
-  <Deployment.Parts>
-    <AssemblyPart x:Name="VocabTrainer_Phone" Source="VocabTrainer_Phone.dll" />
-  </Deployment.Parts>
-</Deployment>

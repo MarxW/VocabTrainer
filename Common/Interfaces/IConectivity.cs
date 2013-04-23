@@ -13,8 +13,11 @@ namespace Marx.Wolfgang.VocabTrainer.Common.Interfaces
          * Get Requests
          */
         Task<string> GetRequestAsync(Uri uri);
+        Task<string> GetRequestAsync(Uri uri, string encoding);
+        Task<string> GetRequestAsync(Uri uri, List<KeyValuePair<string, string>> queryParams, string encoding);
         Task<string> GetRequestAsync(Uri uri, List<KeyValuePair<string, string>> queryParams);
         Task<string> GetRequestAsync(Uri uri, CookieContainer cookies, List<KeyValuePair<string, string>> queryParams);
+        Task<string> GetRequestAsync(Uri uri, CookieContainer cookies, List<KeyValuePair<string, string>> queryParams, string encoding);
 
         //Task<string> GetRequestAsync(Uri uri, CookieContainer cookies, List<KeyValuePair<string, string>> queryParams, string encoding);
         //Task<byte[]> GetBytesAsync(Uri uri, CookieContainer cookies, List<KeyValuePair<string, string>> queryParams);

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2012/deployment" AppPlatformVersion="8.0">
   <DefaultLanguage xmlns="" code="en-US" />
-  <App xmlns="" ProductID="{149367a3-575b-4388-8c53-f5553197cd8b}" Title="VocabTrainer_Phone" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="VocabTrainer_Phone author" Description="Sample description" Publisher="VocabTrainer_Phone" PublisherID="{33d3013d-55b2-49c2-ad04-2e9a31764546}">
+  <App xmlns="" ProductID="{3268ac8c-67d4-4636-8589-566f54ef83a4}" Title="VocabTrainerPhoneApp" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="VocabTrainerPhoneApp author" Description="Sample description" Publisher="VocabTrainerPhoneApp" PublisherID="{69cfb004-9e52-4e30-95c7-7e8a3a268781}">
     <IconPath IsRelative="true" IsResource="false">Assets\ApplicationIcon.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_NETWORKING" />
@@ -11,15 +11,15 @@
       <Capability Name="ID_CAP_WEBBROWSERCOMPONENT" />
     </Capabilities>
     <Tasks>
-      <DefaultTask Name="_default" NavigationPage="MainPage.xaml" />
+      <DefaultTask Name="_default" NavigationPage="/Views/SchoolPage.xaml" />
     </Tasks>
     <Tokens>
-      <PrimaryToken TokenID="VocabTrainer_PhoneToken" TaskName="_default">
+      <PrimaryToken TokenID="VocabTrainerPhoneAppToken" TaskName="_default">
         <TemplateFlip>
           <SmallImageURI IsRelative="true" IsResource="false">Assets\Tiles\FlipCycleTileSmall.png</SmallImageURI>
           <Count>0</Count>
           <BackgroundImageURI IsRelative="true" IsResource="false">Assets\Tiles\FlipCycleTileMedium.png</BackgroundImageURI>
-          <Title>VocabTrainer_Phone</Title>
+          <Title>VocabTrainerPhoneApp</Title>
           <BackContent></BackContent>
           <BackBackgroundImageURI></BackBackgroundImageURI>
           <BackTitle></BackTitle>
