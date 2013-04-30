@@ -7,3 +7,8 @@
 /Common/obj
 /VocabTrainer_Phone/obj
 /VocabTrainerPhoneApp/obj
+/VocabTrainerWcfService/bin
+
+/VocabTrainerWcfService/obj
+/DataModel/bin
+/DataModel/obj

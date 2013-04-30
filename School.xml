@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<School>
+  <ClassRooms>
+    <BasicClassRoom>
+      <Id>1</Id>
+      <Title>MBS - Klass 6</Title>
+      <Lessons>
+        <BasicLesson>
+          <Id>1</Id>
+          <Title>Lesson 1</Title>
+          <Vocabularies>
+            <BasicVocabulary>
+              <Id>1</Id>
+              <German>Schwein</German>
+              <English>Pig</English>
+            </BasicVocabulary>
+          </Vocabularies>
+        </BasicLesson>
+        <BasicLesson>
+          <Id>2</Id>
+          <Title>Lesson 2</Title>
+          <Vocabularies>
+            <BasicVocabulary>
+              <Id>2</Id>
+              <German>Pferd</German>
+              <English>Horse</English>
+            </BasicVocabulary>
+          </Vocabularies>
+        </BasicLesson>
+      </Lessons>
+    </BasicClassRoom>
+  </ClassRooms>
+</School>

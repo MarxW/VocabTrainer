@@ -5,15 +5,15 @@ using System.Linq;
 using System.Text;
 using System.Xml.Serialization;
 
-namespace Marx.Wolfgang.VocabTrainer.Common.DataModel
+namespace Marx.Wolfgang.VocabTrainer.DataModel
 {
     public class BasicLesson
     {
-        [XmlElement("id")]
+        [XmlAttribute("Id")]
         public int Id { get; set; }
-        [XmlElement("title")]
+        [XmlAttribute("Title")]
         public string Title { get; set; }
-        [XmlElement("vocabularies")]
-        public ObservableCollection<BasicVocabulary> Vocabularies { get; set; }
+        [XmlElement("BasicVocabularys")]
+        public ObservableCollection<BasicVocabulary> BasicVocabularies { get; set; }
     }
 }

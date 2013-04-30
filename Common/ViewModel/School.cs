@@ -1,5 +1,4 @@
-﻿using Marx.Wolfgang.VocabTrainer.Common.DataModel;
-using Marx.Wolfgang.VocabTrainer.Common.Interfaces;
+﻿using Marx.Wolfgang.VocabTrainer.Common.Interfaces;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -9,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Marx.Wolfgang.VocabTrainer.Common.Helpers;
+using System.Xml.Linq;
+using Marx.Wolfgang.VocabTrainer.DataModel;
 
 namespace Marx.Wolfgang.VocabTrainer.Common.ViewModel
 {
@@ -70,8 +71,11 @@ namespace Marx.Wolfgang.VocabTrainer.Common.ViewModel
         {
             if (null != conectivity)
             {
-                Uri uri = new Uri(@"http://localhost/ClassRooms.xml");
+                Uri uri = new Uri(Constants.SCHOOL_URI);
                 string data = await conectivity.GetRequestAsync(uri);
+                XDocument xmlDoc = XDocument.Parse(data);
+
+                /*
                 dynamic objClassRooms = JsonConvert.DeserializeObject(data);
                 foreach (dynamic objClassRoom in objClassRooms)
                 {
@@ -83,6 +87,7 @@ namespace Marx.Wolfgang.VocabTrainer.Common.ViewModel
                     };
                     this._classRooms.AddOrUpdateKeyValue(classRoom);
                 }
+                */
                 NotifyPropertyChanged("ClassRooms");
                 EnvokeClassroomsChanged(new EventArgs());
             }

@@ -4,15 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Xml.Serialization;
 
-namespace Marx.Wolfgang.VocabTrainer.Common.DataModel
+namespace Marx.Wolfgang.VocabTrainer.DataModel
 {
     public class BasicVocabulary
     {
-        [XmlElement("id")]
+        [XmlAttribute("Id")]
         public int Id { get; set; }
-        [XmlElement("german")]
+        [XmlAttribute("German")]
         public string German { get; set; }
-        [XmlElement("english")]
+        [XmlAttribute("English")]
         public string English { get; set; }
     }
 }

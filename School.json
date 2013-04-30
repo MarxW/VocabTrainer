@@ -1,0 +1,23 @@
+{
+  "School": {
+    "ClassRooms": {
+      "BasicClassRoom": {
+        "Id": "1",
+        "Title": "MBS - Klass 6",
+        "Lessons": {
+          "BasicLesson": {
+            "Id": "1",
+            "Title": "Lesson 1",
+            "Vocabularies": {
+              "BasicVocabulary": {
+                "Id": "1",
+                "German": "Schwein",
+                "English": "Pig"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

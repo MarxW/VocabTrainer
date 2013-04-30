@@ -4,7 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 
-namespace Marx.Wolfgang.VocabTrainer.Common.DataModel
+namespace Marx.Wolfgang.VocabTrainer.DataModel
 {
     public class BasicMultipleChoiceQuestion
     {
