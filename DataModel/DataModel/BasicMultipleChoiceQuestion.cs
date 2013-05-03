@@ -9,6 +9,6 @@ namespace Marx.Wolfgang.VocabTrainer.DataModel
     public class BasicMultipleChoiceQuestion
     {
         BasicVocabulary VocabularyToQuestion { get; set; }
-        ObservableCollection<BasicVocabulary> MultipleChoices { get; set; }
+        List<BasicVocabulary> MultipleChoices { get; set; }
     }
 }

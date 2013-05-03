@@ -7,6 +7,7 @@ using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using VocabTrainerPhoneApp.Resources;
+using Marx.Wolfgang.VocabTrainer.ViewModel.School;
 
 namespace VocabTrainerPhoneApp
 {
@@ -17,6 +18,7 @@ namespace VocabTrainerPhoneApp
         /// </summary>
         /// <returns>The root frame of the Phone Application.</returns>
         public static PhoneApplicationFrame RootFrame { get; private set; }
+        public SchoolView School { get; private set; }
 
         /// <summary>
         /// Constructor for the Application object.
@@ -122,6 +124,8 @@ namespace VocabTrainerPhoneApp
 
             // Handle reset requests for clearing the backstack
             RootFrame.Navigated += CheckForResetNavigation;
+
+            School = new SchoolView();
 
             // Ensure we don't initialize again
             phoneApplicationInitialized = true;

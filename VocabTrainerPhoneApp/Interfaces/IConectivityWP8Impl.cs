@@ -1,5 +1,4 @@
-﻿using Marx.Wolfgang.VocabTrainer.Common.Interfaces;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -9,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace VocabTrainerPhoneApp.Interfaces
 {
-    class IConectivityWP8Impl : IConectivity
+    class IConectivityWP8Impl //: IConectivity
     {
         public Task<string> GetRequestAsync(Uri uri)
         {

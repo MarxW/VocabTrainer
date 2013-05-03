@@ -1,15 +1,20 @@
-﻿using System.Collections.ObjectModel;
+﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Xml.Serialization;
 
 namespace Marx.Wolfgang.VocabTrainer.DataModel
 {
+
     public class BasicClassRoom
     {
-        [XmlElement("Id")]
+        [XmlAttribute("Id")]
         public int Id { get; set; }
-        [XmlElement("Title")]
+        [XmlAttribute("Title")]
         public string Title { get; set; }
-        [XmlElement("BasicLessons")]
-        public ObservableCollection<BasicLesson> BasicLessons { get; set; }
+        [XmlAttribute("Description")]
+        public string Description { get; set; }
+        [XmlArray("ArrayOfBasicLesson")]
+        [XmlArrayItem("BasicLesson")]
+        public List<BasicLesson> BasicLessons { get; set; }
     }
 }

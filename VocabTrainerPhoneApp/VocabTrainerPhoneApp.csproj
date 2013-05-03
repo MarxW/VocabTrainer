@@ -101,6 +101,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AppResources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Service References\VocabTrainerServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ClassRoom\ClassRoomPage.xaml.cs">
+      <DependentUpon>ClassRoomPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Lesson\LessonPage.xaml.cs">
+      <DependentUpon>LessonPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\SchoolPage.xaml.cs">
       <DependentUpon>SchoolPage.xaml</DependentUpon>
     </Compile>
@@ -110,6 +121,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
+    <Page Include="Views\ClassRoom\ClassRoomPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Lesson\LessonPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\SchoolPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -117,9 +136,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\AppManifest.xml" />
+    <None Include="Properties\DataSources\Marx.Wolfgang.VocabTrainer.DataModel.BasicClassRoom.datasource" />
     <None Include="Properties\WMAppManifest.xml">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\VocabTrainerServiceReference\School.wsdl" />
+    <None Include="Service References\VocabTrainerServiceReference\School.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\VocabTrainerServiceReference\School1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\VocabTrainerServiceReference\School2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="ServiceReferences.ClientConfig" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\AlignmentGrid.png" />
@@ -141,6 +172,13 @@
     <Content Include="Assets\Tiles\IconicTileSmall.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Service References\VocabTrainerServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\VocabTrainerServiceReference\configuration.svcinfo" />
+    <None Include="Service References\VocabTrainerServiceReference\configuration91.svcinfo" />
+    <None Include="Service References\VocabTrainerServiceReference\School.disco" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\AppResources.resx">
@@ -149,10 +187,21 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Common\Common.csproj">
-      <Project>{BEF0D7D0-247B-4B69-AB97-F834836C9687}</Project>
-      <Name>Common</Name>
+    <ProjectReference Include="..\DataModel\DataModel.csproj">
+      <Project>{9C5BB85B-24C9-4D55-9DB3-4DC25EE6EB83}</Project>
+      <Name>DataModel</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ViewModel\ViewModel.csproj">
+      <Project>{CE7872E9-05B4-47F5-98C8-50AC975522D4}</Project>
+      <Name>ViewModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\VocabTrainerServiceReference\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />

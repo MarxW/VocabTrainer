@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="80d49b96-23e3-4a12-9d43-38d4341255db" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://vocabtrainerwcf.tischlerei-penert.de/School.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="School.disco" MetadataType="Disco" ID="c62c549f-93c9-4871-bbe6-4faf93d8a696" SourceId="1" SourceUrl="http://vocabtrainerwcf.tischlerei-penert.de/School.svc?disco" />
+    <MetadataFile FileName="School.xsd" MetadataType="Schema" ID="293cc85e-e388-4c60-b943-a40931150122" SourceId="1" SourceUrl="http://vocabtrainerwcf.tischlerei-penert.de/School.svc?xsd=xsd1" />
+    <MetadataFile FileName="School.wsdl" MetadataType="Wsdl" ID="15299a2f-14c2-4544-a07a-3cb6ed5a6508" SourceId="1" SourceUrl="http://vocabtrainerwcf.tischlerei-penert.de/School.svc?wsdl" />
+    <MetadataFile FileName="School1.xsd" MetadataType="Schema" ID="735a9d14-dc66-4aed-bee5-81a7e4709492" SourceId="1" SourceUrl="http://vocabtrainerwcf.tischlerei-penert.de/School.svc?xsd=xsd2" />
+    <MetadataFile FileName="School2.xsd" MetadataType="Schema" ID="62a76359-04c6-449e-991e-d88a51a6c4a4" SourceId="1" SourceUrl="http://vocabtrainerwcf.tischlerei-penert.de/School.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

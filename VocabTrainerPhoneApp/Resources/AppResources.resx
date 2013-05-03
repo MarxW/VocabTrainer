@@ -134,4 +134,10 @@
   <data name="AppBarMenuItemText" xml:space="preserve">
     <value>Menu Item</value>
   </data>
+  <data name="Page_SchoolPage_SelectRoom" xml:space="preserve">
+    <value>Select your class room</value>
+  </data>
+  <data name="Page_ClassRoomPage_SelectLesson" xml:space="preserve">
+    <value>Please select your lesson:</value>
+  </data>
 </root>

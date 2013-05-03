@@ -88,6 +88,24 @@ namespace VocabTrainerPhoneApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please select your lesson:.
+        /// </summary>
+        public static string Page_ClassRoomPage_SelectLesson {
+            get {
+                return ResourceManager.GetString("Page_ClassRoomPage_SelectLesson", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select your class room.
+        /// </summary>
+        public static string Page_SchoolPage_SelectRoom {
+            get {
+                return ResourceManager.GetString("Page_SchoolPage_SelectRoom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to LeftToRight.
         /// </summary>
         public static string ResourceFlowDirection {

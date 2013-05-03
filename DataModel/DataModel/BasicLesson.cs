@@ -13,7 +13,10 @@ namespace Marx.Wolfgang.VocabTrainer.DataModel
         public int Id { get; set; }
         [XmlAttribute("Title")]
         public string Title { get; set; }
-        [XmlElement("BasicVocabularys")]
-        public ObservableCollection<BasicVocabulary> BasicVocabularies { get; set; }
+        [XmlAttribute("Description")]
+        public string Description { get; set; }
+        [XmlArray("ArrayOfBasicVocabulary")]
+        [XmlArrayItem("BasicVocabulary")]
+        public List<BasicVocabulary> BasicVocabularies { get; set; }
     }
 }

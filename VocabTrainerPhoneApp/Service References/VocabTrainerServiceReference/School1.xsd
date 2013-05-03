@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Marx.Wolfgang.VocabTrainer.DataModel" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Marx.Wolfgang.VocabTrainer.DataModel" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfBasicClassRoom">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BasicClassRoom" nillable="true" type="tns:BasicClassRoom" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBasicClassRoom" nillable="true" type="tns:ArrayOfBasicClassRoom" />
+  <xs:complexType name="BasicClassRoom">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BasicLessons" nillable="true" type="tns:ArrayOfBasicLesson" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BasicClassRoom" nillable="true" type="tns:BasicClassRoom" />
+  <xs:complexType name="ArrayOfBasicLesson">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BasicLesson" nillable="true" type="tns:BasicLesson" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBasicLesson" nillable="true" type="tns:ArrayOfBasicLesson" />
+  <xs:complexType name="BasicLesson">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BasicVocabularies" nillable="true" type="tns:ArrayOfBasicVocabulary" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BasicLesson" nillable="true" type="tns:BasicLesson" />
+  <xs:complexType name="ArrayOfBasicVocabulary">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BasicVocabulary" nillable="true" type="tns:BasicVocabulary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBasicVocabulary" nillable="true" type="tns:ArrayOfBasicVocabulary" />
+  <xs:complexType name="BasicVocabulary">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="English" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="German" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BasicVocabulary" nillable="true" type="tns:BasicVocabulary" />
+</xs:schema>

@@ -12,3 +12,7 @@
 /VocabTrainerWcfService/obj
 /DataModel/bin
 /DataModel/obj
+/ViewModel/bin
+/ViewModel/obj
+/WcfVocabTrainer/obj
+/WcfVocabTrainer/bin
