@@ -18,6 +18,10 @@ namespace WcfVocabTrainer
         List<BasicClassRoom> GetClassRooms();
 
         [OperationContract]
+        [WebInvoke(Method = "GET", ResponseFormat = WebMessageFormat.Xml, BodyStyle = WebMessageBodyStyle.Bare, UriTemplate = "GetLastDataUpdate")]
+        DateTime GetLastDataUpdate();
+
+        [OperationContract]
         void DoWork();
     }
 }

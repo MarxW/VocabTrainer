@@ -9,6 +9,7 @@
   <xs:complexType name="BasicClassRoom">
     <xs:sequence>
       <xs:element minOccurs="0" name="BasicLessons" nillable="true" type="tns:ArrayOfBasicLesson" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Id" type="xs:int" />
       <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
     </xs:sequence>
@@ -23,6 +24,7 @@
   <xs:complexType name="BasicLesson">
     <xs:sequence>
       <xs:element minOccurs="0" name="BasicVocabularies" nillable="true" type="tns:ArrayOfBasicVocabulary" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Id" type="xs:int" />
       <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
     </xs:sequence>

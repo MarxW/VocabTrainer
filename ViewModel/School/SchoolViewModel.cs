@@ -10,7 +10,7 @@ using Marx.Wolfgang.VocabTrainer.ViewModel.Helpers;
 
 namespace Marx.Wolfgang.VocabTrainer.ViewModel.School
 {
-    public class SchoolView: INotifyPropertyChanged
+    public class SchoolViewModel: INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
         public event EventHandler ClassroomsChanged;
@@ -36,7 +36,7 @@ namespace Marx.Wolfgang.VocabTrainer.ViewModel.School
 
         #region "Constructors"
 
-        public SchoolView()
+        public SchoolViewModel()
         {
             this._classRooms = new ObservableCollection<BasicClassRoom>();
         }

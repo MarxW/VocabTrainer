@@ -11,32 +11,35 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAFML40BvRXEOnIpOb2UcUHAAAAAACAAAAAAAQZgAAAAEAACAAAADb3CwEpyePylz/cx/gOQUOutMVDev9lYlG2CEAeEwJZgAAAAAOgAAAAAIAACAAAAC8dRaYgnXrFvcBaLKKczvc5Y9s7Szr2lLxWbpIwDUutRAAAAAUvtVBPoAM/+TG6KKjwNRwQAAAAJCs8uqX4zX1ggTjXrqSGam5fhDOfp+gdAkhjzZGp1jim40VLZPtrwZhLXfKZ6lZCaB+JLsocgAyqzU/R5Gopdo=</EncryptedPassword>
   </PropertyGroup>
   <ItemGroup>
+    <File Include="App_Data/Infos.xml">
+      <publishTime>05/05/2013 12:23:28</publishTime>
+    </File>
     <File Include="App_Data/log4net.config">
-      <publishTime>05/03/2013 08:08:20</publishTime>
+      <publishTime>05/04/2013 15:59:05</publishTime>
     </File>
     <File Include="App_Data/School.xml">
-      <publishTime>05/03/2013 14:54:08</publishTime>
+      <publishTime>05/04/2013 15:59:05</publishTime>
     </File>
     <File Include="bin/DataModel.dll">
-      <publishTime>05/03/2013 14:54:19</publishTime>
+      <publishTime>05/05/2013 12:34:57</publishTime>
     </File>
     <File Include="bin/log4net.dll">
-      <publishTime>05/03/2013 08:06:17</publishTime>
+      <publishTime>05/04/2013 15:59:06</publishTime>
     </File>
     <File Include="bin/WcfVocabTrainer.dll">
-      <publishTime>05/03/2013 14:54:19</publishTime>
+      <publishTime>05/05/2013 12:34:58</publishTime>
     </File>
     <File Include="Global.asax">
-      <publishTime>05/03/2013 08:08:52</publishTime>
+      <publishTime>05/04/2013 15:59:05</publishTime>
     </File>
     <File Include="packages.config">
-      <publishTime>05/03/2013 08:06:18</publishTime>
+      <publishTime>05/04/2013 15:59:05</publishTime>
     </File>
     <File Include="School.svc">
-      <publishTime>05/02/2013 18:11:49</publishTime>
+      <publishTime>05/04/2013 15:59:05</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>05/03/2013 14:54:21</publishTime>
+      <publishTime>05/05/2013 12:38:59</publishTime>
     </File>
   </ItemGroup>
 </Project>

@@ -14,6 +14,10 @@ using System.ServiceModel;
 using VocabTrainerPhoneApp.VocabTrainerServiceReference;
 using System.Threading.Tasks;
 using Marx.Wolfgang.VocabTrainer.DataModel;
+using Marx.Wolfgang.VocabTrainer.Common.Interfaces;
+using Marx.Wolfgang.VocabTrainer.Common.Helpers;
+using System.Xml.Linq;
+using System.Collections.ObjectModel;
 
 namespace VocabTrainerPhoneApp.Views
 {
@@ -22,12 +26,20 @@ namespace VocabTrainerPhoneApp.Views
         //private IConectivity conn = new IConectivityWP8Impl();
         private App app = App.Current as App;
         private SchoolClient client;
+        private IVocabTrainerStorage vocabTrainerStorage = new IVocabTrainerStorageImpl();
+        private string schoolFile = "school.xml";
 
         public SchoolPage()
         {
             InitializeComponent();
             client = GetVocabTrainerClient();
-            client.GetClassRoomsCompleted += SchoolPage_GetClassRoomsCompleted;         
+            client.GetClassRoomsCompleted += SchoolPage_GetClassRoomsCompleted;
+            client.GetLastDataUpdateCompleted += client_GetLastDataUpdateCompleted;
+        }
+
+        void client_GetLastDataUpdateCompleted(object sender, GetLastDataUpdateCompletedEventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         void SchoolPage_GetClassRoomsCompleted(object sender, GetClassRoomsCompletedEventArgs e)
@@ -38,6 +50,7 @@ namespace VocabTrainerPhoneApp.Views
                 {
                     app.School.FillViewData(e.Result);
                     this.DataContext = app.School;
+                    vocabTrainerStorage.WriteData(schoolFile, e.Result.ToXML());
                 });
             });
         }
@@ -48,11 +61,26 @@ namespace VocabTrainerPhoneApp.Views
             return client;
         }
 
-        private void PhoneApplicationPage_Loaded(object sender, RoutedEventArgs e)
+        private  void PhoneApplicationPage_Loaded(object sender, RoutedEventArgs e)
         {
             if (app.School.ClassRooms.Count < 1)
             {
-                client.GetClassRoomsAsync();
+                try
+                {
+                    string data = vocabTrainerStorage.ReadData(schoolFile).Result;
+                    XDocument doc = XDocument.Parse(data);
+                    var obj = doc.DeserializeAsXML<ObservableCollection<BasicClassRoom>>();
+                    Dispatcher.BeginInvoke(() =>
+                    {
+                        app.School.FillViewData(obj);
+                        this.DataContext = app.School;
+                        client.GetLastDataUpdateAsync();
+                    });
+                }
+                catch (Exception ex)
+                {
+                    client.GetClassRoomsAsync();
+                }
             }
         }
 
@@ -64,5 +92,7 @@ namespace VocabTrainerPhoneApp.Views
                 NavigationService.Navigate(new Uri("/Views/ClassRoom/ClassRoomPage.xaml?classroom=" + room.Id, UriKind.Relative));
             }
         }
+
+    
     }
 }

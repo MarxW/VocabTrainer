@@ -23,6 +23,11 @@ namespace VocabTrainerPhoneApp.VocabTrainerServiceReference {
         
         System.Collections.ObjectModel.ObservableCollection<Marx.Wolfgang.VocabTrainer.DataModel.BasicClassRoom> EndGetClassRooms(System.IAsyncResult result);
         
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/ISchool/GetLastDataUpdate", ReplyAction="http://tempuri.org/ISchool/GetLastDataUpdateResponse")]
+        System.IAsyncResult BeginGetLastDataUpdate(System.AsyncCallback callback, object asyncState);
+        
+        System.DateTime EndGetLastDataUpdate(System.IAsyncResult result);
+        
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/ISchool/DoWork", ReplyAction="http://tempuri.org/ISchool/DoWorkResponse")]
         System.IAsyncResult BeginDoWork(System.AsyncCallback callback, object asyncState);
         
@@ -54,6 +59,25 @@ namespace VocabTrainerPhoneApp.VocabTrainerServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetLastDataUpdateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetLastDataUpdateCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public System.DateTime Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((System.DateTime)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class SchoolClient : System.ServiceModel.ClientBase<VocabTrainerPhoneApp.VocabTrainerServiceReference.ISchool>, VocabTrainerPhoneApp.VocabTrainerServiceReference.ISchool {
         
         private BeginOperationDelegate onBeginGetClassRoomsDelegate;
@@ -61,6 +85,12 @@ namespace VocabTrainerPhoneApp.VocabTrainerServiceReference {
         private EndOperationDelegate onEndGetClassRoomsDelegate;
         
         private System.Threading.SendOrPostCallback onGetClassRoomsCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetLastDataUpdateDelegate;
+        
+        private EndOperationDelegate onEndGetLastDataUpdateDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetLastDataUpdateCompletedDelegate;
         
         private BeginOperationDelegate onBeginDoWorkDelegate;
         
@@ -123,6 +153,8 @@ namespace VocabTrainerPhoneApp.VocabTrainerServiceReference {
         
         public event System.EventHandler<GetClassRoomsCompletedEventArgs> GetClassRoomsCompleted;
         
+        public event System.EventHandler<GetLastDataUpdateCompletedEventArgs> GetLastDataUpdateCompleted;
+        
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> DoWorkCompleted;
         
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> OpenCompleted;
@@ -171,6 +203,50 @@ namespace VocabTrainerPhoneApp.VocabTrainerServiceReference {
                 this.onGetClassRoomsCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetClassRoomsCompleted);
             }
             base.InvokeAsync(this.onBeginGetClassRoomsDelegate, null, this.onEndGetClassRoomsDelegate, this.onGetClassRoomsCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult VocabTrainerPhoneApp.VocabTrainerServiceReference.ISchool.BeginGetLastDataUpdate(System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetLastDataUpdate(callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.DateTime VocabTrainerPhoneApp.VocabTrainerServiceReference.ISchool.EndGetLastDataUpdate(System.IAsyncResult result) {
+            return base.Channel.EndGetLastDataUpdate(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetLastDataUpdate(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            return ((VocabTrainerPhoneApp.VocabTrainerServiceReference.ISchool)(this)).BeginGetLastDataUpdate(callback, asyncState);
+        }
+        
+        private object[] OnEndGetLastDataUpdate(System.IAsyncResult result) {
+            System.DateTime retVal = ((VocabTrainerPhoneApp.VocabTrainerServiceReference.ISchool)(this)).EndGetLastDataUpdate(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetLastDataUpdateCompleted(object state) {
+            if ((this.GetLastDataUpdateCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetLastDataUpdateCompleted(this, new GetLastDataUpdateCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetLastDataUpdateAsync() {
+            this.GetLastDataUpdateAsync(null);
+        }
+        
+        public void GetLastDataUpdateAsync(object userState) {
+            if ((this.onBeginGetLastDataUpdateDelegate == null)) {
+                this.onBeginGetLastDataUpdateDelegate = new BeginOperationDelegate(this.OnBeginGetLastDataUpdate);
+            }
+            if ((this.onEndGetLastDataUpdateDelegate == null)) {
+                this.onEndGetLastDataUpdateDelegate = new EndOperationDelegate(this.OnEndGetLastDataUpdate);
+            }
+            if ((this.onGetLastDataUpdateCompletedDelegate == null)) {
+                this.onGetLastDataUpdateCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetLastDataUpdateCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetLastDataUpdateDelegate, null, this.onEndGetLastDataUpdateDelegate, this.onGetLastDataUpdateCompletedDelegate, userState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -301,6 +377,18 @@ namespace VocabTrainerPhoneApp.VocabTrainerServiceReference {
             public System.Collections.ObjectModel.ObservableCollection<Marx.Wolfgang.VocabTrainer.DataModel.BasicClassRoom> EndGetClassRooms(System.IAsyncResult result) {
                 object[] _args = new object[0];
                 System.Collections.ObjectModel.ObservableCollection<Marx.Wolfgang.VocabTrainer.DataModel.BasicClassRoom> _result = ((System.Collections.ObjectModel.ObservableCollection<Marx.Wolfgang.VocabTrainer.DataModel.BasicClassRoom>)(base.EndInvoke("GetClassRooms", _args, result)));
+                return _result;
+            }
+            
+            public System.IAsyncResult BeginGetLastDataUpdate(System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[0];
+                System.IAsyncResult _result = base.BeginInvoke("GetLastDataUpdate", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public System.DateTime EndGetLastDataUpdate(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                System.DateTime _result = ((System.DateTime)(base.EndInvoke("GetLastDataUpdate", _args, result)));
                 return _result;
             }
             

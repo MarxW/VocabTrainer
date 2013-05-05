@@ -18,6 +18,16 @@ namespace WcfVocabTrainer
             return ClassRoomHelper.LoadAllClassRoomsFromXML();
         }
 
+        public DateTime GetLastDataUpdate()
+        {
+            string data = (from info in InformationHelper.LoadAllInfosFromXML() where info.Key == "LastDataUpdate" select info.Value).FirstOrDefault();
+            if (!string.IsNullOrWhiteSpace(data))
+            {
+                return DateTime.Parse(data);
+            }
+            return DateTime.MinValue;
+        }
+
         public void DoWork()
         {
         }

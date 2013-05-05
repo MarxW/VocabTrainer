@@ -18,7 +18,7 @@ namespace VocabTrainerPhoneApp
         /// </summary>
         /// <returns>The root frame of the Phone Application.</returns>
         public static PhoneApplicationFrame RootFrame { get; private set; }
-        public SchoolView School { get; private set; }
+        public SchoolViewModel School { get; private set; }
 
         /// <summary>
         /// Constructor for the Application object.
@@ -125,7 +125,7 @@ namespace VocabTrainerPhoneApp
             // Handle reset requests for clearing the backstack
             RootFrame.Navigated += CheckForResetNavigation;
 
-            School = new SchoolView();
+            School = new SchoolViewModel();
 
             // Ensure we don't initialize again
             phoneApplicationInitialized = true;

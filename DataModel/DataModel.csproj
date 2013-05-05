@@ -40,6 +40,7 @@
     <Compile Include="DataModel\BasicLesson.cs" />
     <Compile Include="DataModel\BasicMultipleChoiceQuestion.cs" />
     <Compile Include="DataModel\BasicVocabulary.cs" />
+    <Compile Include="DataModel\Information.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
