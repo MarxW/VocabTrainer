@@ -27,6 +27,7 @@ namespace VocabTrainerPhoneApp.Views
         private App app = App.Current as App;
         private SchoolClient client;
         private IVocabTrainerStorage vocabTrainerStorage = new IVocabTrainerStorageImpl();
+        private IVocabTrainerSettings settings = new IVocabTrainerSettingsImpl();
         private string schoolFile = "school.xml";
 
         public SchoolPage()
@@ -39,7 +40,10 @@ namespace VocabTrainerPhoneApp.Views
 
         void client_GetLastDataUpdateCompleted(object sender, GetLastDataUpdateCompletedEventArgs e)
         {
-            throw new NotImplementedException();
+            if (e.Result < settings.GetLastDataUpdate())
+            {
+                //Display update notification
+            }
         }
 
         void SchoolPage_GetClassRoomsCompleted(object sender, GetClassRoomsCompletedEventArgs e)
@@ -51,6 +55,7 @@ namespace VocabTrainerPhoneApp.Views
                     app.School.FillViewData(e.Result);
                     this.DataContext = app.School;
                     vocabTrainerStorage.WriteData(schoolFile, e.Result.ToXML());
+                    settings.SetLastDataUpdate(DateTime.Now);
                 });
             });
         }
