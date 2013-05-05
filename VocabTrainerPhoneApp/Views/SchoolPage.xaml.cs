@@ -34,19 +34,23 @@ namespace VocabTrainerPhoneApp.Views
         {
             InitializeComponent();
             client = GetVocabTrainerClient();
-            client.GetClassRoomsCompleted += SchoolPage_GetClassRoomsCompleted;
-            client.GetLastDataUpdateCompleted += client_GetLastDataUpdateCompleted;
+            client.GetClassRoomsCompleted += Client_GetClassRoomsCompleted;
+            client.GetLastDataUpdateCompleted += Client_GetLastDataUpdateCompleted;
         }
 
-        void client_GetLastDataUpdateCompleted(object sender, GetLastDataUpdateCompletedEventArgs e)
+        void Client_GetLastDataUpdateCompleted(object sender, GetLastDataUpdateCompletedEventArgs e)
         {
             if (e.Result < settings.GetLastDataUpdate())
             {
-                //Display update notification
+                MessageBoxResult result = MessageBox.Show("Update avalable", "Updates", MessageBoxButton.OKCancel);
+                if (result == MessageBoxResult.OK)
+                {
+                    client.GetClassRoomsAsync();
+                }
             }
         }
 
-        void SchoolPage_GetClassRoomsCompleted(object sender, GetClassRoomsCompletedEventArgs e)
+        void Client_GetClassRoomsCompleted(object sender, GetClassRoomsCompletedEventArgs e)
         {
             Task.Run(() =>
             {
