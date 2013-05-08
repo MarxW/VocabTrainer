@@ -94,6 +94,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\IConectivityWP8Impl.cs" />
+    <Compile Include="Interfaces\IVocabTrainerSettingsImpl.cs" />
     <Compile Include="Interfaces\IVocabTrainerStorageImpl.cs" />
     <Compile Include="LocalizedStrings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -5,7 +5,7 @@
     <CurrentDeployID>4E136B04-AB61-4D76-B040-894831FCA286</CurrentDeployID>
   </PropertyGroup>
   <PropertyGroup>
-    <ProjectView>ProjectFiles</ProjectView>
+    <ProjectView>ShowAllFiles</ProjectView>
   </PropertyGroup>
   <ProjectExtensions>
     <VisualStudio>

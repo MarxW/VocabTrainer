@@ -40,7 +40,7 @@ namespace VocabTrainerPhoneApp.Views
 
         void Client_GetLastDataUpdateCompleted(object sender, GetLastDataUpdateCompletedEventArgs e)
         {
-            if (e.Result < settings.GetLastDataUpdate())
+            if (settings.GetLastDataUpdate() < e.Result)
             {
                 MessageBoxResult result = MessageBox.Show("Update avalable", "Updates", MessageBoxButton.OKCancel);
                 if (result == MessageBoxResult.OK)

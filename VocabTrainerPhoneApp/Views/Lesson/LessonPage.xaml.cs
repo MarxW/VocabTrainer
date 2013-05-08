@@ -65,6 +65,11 @@ namespace VocabTrainerPhoneApp.Views.Lesson
             DisplayVocab();
         }
 
+        private void ButtonTest_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
         private void DisplayVocab()
         {
             if (curentIndex == 0)
@@ -78,7 +83,7 @@ namespace VocabTrainerPhoneApp.Views.Lesson
             if (curentIndex == lessonViewModel.BasicVocabularys.Count - 1)
             {
                 this.buttonNext.IsEnabled = false;
-                isCompleted = true;
+                this.buttonTest.IsEnabled = true;
             }
             else
             {
